@@ -9,44 +9,38 @@
 <style>
 
 :root{
-    --bg:#0b1020;
-    --card:#151c2e;
-    --card2:#1d2638;
-    --accent:#ff4d6d;
-    --accent2:#6d9fff;
-    --text:#ffffff;
-    --muted:#b9c2d3;
-    --border:#283246;
+    --bg:#0d1117;
+    --card:#161b22;
+    --border:#30363d;
+    --text:#f0f6fc;
+    --muted:#8b949e;
+    --pink:#ff4d6d;
+    --blue:#4ea1ff;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Inter,Segoe UI,sans-serif;
 }
 
 body{
+    font-family:Segoe UI, Arial, sans-serif;
     background:
-        radial-gradient(circle at top,#233150 0%,#0b1020 60%);
+    radial-gradient(circle at top,#25375e,#0d1117 60%);
     color:var(--text);
-    max-width:850px;
+    max-width:900px;
     margin:auto;
     padding:20px;
-    min-height:100vh;
 }
 
 header{
-    background:linear-gradient(
-        135deg,
-        #ff4d6d,
-        #6d9fff
-    );
-    padding:35px 25px;
+    background:linear-gradient(135deg,#ff4d6d,#4ea1ff);
     border-radius:24px;
+    padding:35px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
     margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 header h1{
@@ -56,96 +50,73 @@ header h1{
 
 header p{
     opacity:.9;
-    line-height:1.5;
 }
 
-.stats{
-    margin-top:15px;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+.intro{
+    text-align:center;
+    margin-bottom:25px;
+    color:var(--muted);
 }
 
-.badge{
-    background:rgba(255,255,255,.15);
-    padding:8px 14px;
-    border-radius:30px;
-    font-weight:600;
+details{
+    margin-bottom:16px;
 }
 
-details.category{
-    background:var(--card);
+.category{
     border:1px solid var(--border);
     border-radius:18px;
     overflow:hidden;
-    margin-bottom:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    background:var(--card);
 }
 
 .category summary{
-    list-style:none;
     cursor:pointer;
     padding:18px;
-    font-size:1.1rem;
-    font-weight:700;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    font-size:1.2rem;
+    font-weight:bold;
+    list-style:none;
 }
 
 .category summary::-webkit-details-marker{
     display:none;
 }
 
-.category summary:hover{
-    background:#1c2538;
-}
-
-.venues{
+.venue{
     border-top:1px solid var(--border);
 }
 
-details.venue{
-    border-bottom:1px solid var(--border);
-}
-
-details.venue:last-child{
-    border-bottom:none;
-}
-
 .venue summary{
-    list-style:none;
     cursor:pointer;
     padding:18px;
+    list-style:none;
 }
 
 .venue summary::-webkit-details-marker{
     display:none;
 }
 
-.venue summary:hover{
-    background:#1d2638;
+.venue:hover summary{
+    background:#202734;
 }
 
 .venue-name{
     font-size:1.1rem;
-    font-weight:700;
+    font-weight:bold;
 }
 
-.venue-details{
-    background:#101725;
-    padding:18px;
+.content{
+    padding:20px;
+    background:#111827;
 }
 
 .capacity{
     display:inline-block;
     background:rgba(255,77,109,.15);
-    color:#ff6f8a;
-    padding:8px 12px;
-    border-radius:30px;
-    font-weight:700;
+    color:#ff7a95;
+    padding:8px 14px;
+    border-radius:20px;
     margin-bottom:15px;
+    font-weight:bold;
 }
 
 .buttons{
@@ -158,4 +129,177 @@ details.venue:last-child{
     text-decoration:none;
     text-align:center;
     padding:12px;
-    border-radius:12px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.setlist{
+    background:#163523;
+    color:#7affb8;
+}
+
+.maps{
+    background:#1b3148;
+    color:#91d8ff;
+}
+
+.web{
+    background:#2f2047;
+    color:#d0b7ff;
+}
+
+.agenda{
+    background:#4b3013;
+    color:#ffd09d;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:var(--muted);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎵 Guide des salles de concerts de Paris</h1>
+<p>Capacité • Localisation • Site web • Agenda</p>
+</header>
+
+<div class="intro">
+Découvrez quelques-unes des salles les plus emblématiques de la capitale.
+</div>
+
+<details class="category" open>
+
+<summary>🏛️ Salles emblématiques</summary>
+
+<!-- Olympia -->
+
+<details class="venue">
+
+<summary>
+<div class="venue-name">L'Olympia</div>
+</summary>
+
+<div class="content">
+
+<div class="capacity">
+👥 2 824 places
+</div>
+
+<div class="buttons">
+
+https://www.google.com/maps/search/?api=1&query=Olympia+Paris
+
+<a class="btn web"
+href="https://www.olympiahall.com/"
+target="_blank">
+🌍 Site
+</a>
+
+<a class="btn agenda"
+href="https://www.olympiahall.com/programmation/"
+target="_blank">
+📅 Agenda
+</a>
+
+https://www.setlist.fm/
+
+</div>
+</div>
+
+</details>
+
+<!-- Cigale -->
+
+<details class="venue">
+
+<summary>
+<div class="venue-name">La Cigale</div>
+</summary>
+
+<div class="content">
+
+<div class="capacity">
+👥 1 474 places
+</div>
+
+<div class="buttons">
+
+https://www.google.com/maps/search/?api=1&query=La+Cigale+Paris"
+target="_blank">
+📍 Carte
+</a>
+
+igale.fr/"
+target="_blank">
+🌍 Site
+</a>
+
+<a class="btn agenda"
+href="https://www.lacigale.fr/agenda/"
+target="_blank">
+📅 Agenda
+</a>
+
+https://www.setlist.fm/
+
+</div>
+</div>
+
+</details>
+
+<!-- Accor Arena -->
+
+<details class="venue">
+
+<summary>
+<div class="venue-name">Accor Arena</div>
+</summary>
+
+<div class="content">
+
+<div class="capacity">
+👥 20 300 places
+</div>
+
+<div class="buttons">
+
+www.google.com/maps/search/?api=1&query=Accor+Arena+Paris"
+target="_blank">
+📍 Carte
+</a>
+
+<a class="btn web"
+href="https://www.accorarena.com/"
+target="_blank">
+🌍 Site
+</a>
+
+<a class="btn agenda"
+href="https://www.accorarena.com/fr/programmation"
+target="_blank">
+📅 Agenda
+</a>
+
+https://www.setlist.fm/
+🎵 Setlists
+</a>
+
+</div>
+</div>
+
+</details>
+
+</details>
+
+<footer>
+🎶 Guide de poche des salles de concerts parisiennes
+</footer>
+
+</body>
+</html>
